@@ -230,3 +230,119 @@ CREATE TABLE `aweb_user_role` (
 -- ----------------------------
 INSERT INTO `aweb_user_role` VALUES ('358', '357', '1');
 INSERT INTO `aweb_user_role` VALUES ('361', '358', '2');
+
+
+
+
+-- ----------------------------
+-- Table structure for `sc_project_base`
+-- ----------------------------
+DROP TABLE IF EXISTS `sc_project_base`;
+CREATE TABLE `sc_project_base` (
+  `id` bigint(32) NOT NULL auto_increment COMMENT '主键',
+  `pro_name` varchar(300) default NULL COMMENT '项目名称',
+  `pro_status` varchar(20) default NULL COMMENT '项目状态',
+  `pro_intro` text COMMENT '项目介绍',
+  `pro_company` varchar(200) default NULL COMMENT '项目所属公司',
+  `pro_linkman` varchar(200) default NULL COMMENT '项目对接人',
+  `pro_linkman_number` varchar(200) default NULL COMMENT '项目对接人联系方式',
+  `pro_total_amount` varchar(50) default NULL COMMENT '项目金额',
+  `pro_industry` varchar(20) default NULL COMMENT '所属行业',
+  `pro_type` varchar(20) default NULL COMMENT '项目类型',
+  `pro_way` varchar(20) default NULL COMMENT '项目方式',
+  `pro_scale` varchar(20) default NULL COMMENT '项目规模',
+  `pro_expect_start_time` datetime default NULL COMMENT '项目预计开始时间',
+  `pro_expect_end_time` datetime default NULL COMMENT '项目预计结束时间',
+  `customer_add` varchar(300) default NULL COMMENT '客户地址',
+  `create_time` datetime default NULL COMMENT '创建时间',
+  `update_time` datetime default NULL COMMENT '修改时间',
+  `create_user_id` bigint(20) default NULL COMMENT '创建用户',
+  `update_user_id` bigint(20) default NULL COMMENT '修改用户',
+  `ext1` varchar(100) default NULL COMMENT '扩展1',
+  `ext2` varchar(100) default NULL COMMENT '扩展2',
+  `ext3` varchar(100) default NULL COMMENT '扩展3',
+  `ext4` varchar(100) default NULL COMMENT '扩展4',
+  `ext5` varchar(100) default NULL COMMENT '扩展5',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='项目基础表';
+
+-- ----------------------------
+-- Records of sc_project_base
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sc_project_manager_history`
+-- ----------------------------
+DROP TABLE IF EXISTS `sc_project_manager_history`;
+CREATE TABLE `sc_project_manager_history` (
+  `id` bigint(32) NOT NULL auto_increment COMMENT '主键',
+  `user_id` bigint(32) default NULL COMMENT '用户ID',
+  `pro_id` bigint(32) default NULL COMMENT '项目id',
+  `personnel_status` varchar(20) default NULL COMMENT '人员状态',
+  `manager_status` varchar(20) default NULL COMMENT '项目负责人状态',
+  `create_time` datetime default NULL COMMENT '创建时间',
+  `update_time` datetime default NULL COMMENT '修改时间',
+  `create_user_id` bigint(20) default NULL COMMENT '创建用户',
+  `update_user_id` bigint(20) default NULL COMMENT '修改用户',
+  `ext1` varchar(100) default NULL COMMENT '扩展1',
+  `ext2` varchar(100) default NULL COMMENT '扩展2',
+  `ext3` varchar(100) default NULL COMMENT '扩展3',
+  `ext4` varchar(100) default NULL COMMENT '扩展4',
+  `ext5` varchar(100) default NULL COMMENT '扩展5',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='项目人员管理历史表';
+
+-- ----------------------------
+-- Records of sc_project_manager_history
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sc_project_track`
+-- ----------------------------
+DROP TABLE IF EXISTS `sc_project_track`;
+CREATE TABLE `sc_project_track` (
+  `id` bigint(32) NOT NULL auto_increment COMMENT '主键',
+  `pro_id` bigint(32) default NULL COMMENT '项目ID',
+  `track_time` datetime default NULL COMMENT '跟踪时间',
+  `track_context` text COMMENT '跟踪内容',
+  `create_time` datetime default NULL COMMENT '创建时间',
+  `update_time` datetime default NULL COMMENT '修改时间',
+  `create_user_id` bigint(20) default NULL COMMENT '创建用户',
+  `update_user_id` bigint(20) default NULL COMMENT '修改用户',
+  `ext1` varchar(100) default NULL COMMENT '扩展1',
+  `ext2` varchar(100) default NULL COMMENT '扩展2',
+  `ext3` varchar(100) default NULL COMMENT '扩展3',
+  `ext4` varchar(100) default NULL COMMENT '扩展4',
+  `ext5` varchar(100) default NULL COMMENT '扩展5',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='项目跟踪表';
+
+-- ----------------------------
+-- Records of sc_project_track
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sc_project_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `sc_project_user`;
+CREATE TABLE `sc_project_user` (
+  `id` bigint(32) NOT NULL auto_increment COMMENT '主键',
+  `user_id` bigint(32) default NULL COMMENT '用户ID',
+  `pro_id` bigint(32) default NULL COMMENT '项目ID',
+  `personnel_status` varchar(20) default NULL COMMENT '人员状态',
+  `manager_status` varchar(20) default NULL COMMENT '项目负责人状态',
+  `create_time` datetime default NULL COMMENT '创建时间',
+  `update_time` datetime default NULL COMMENT '修改时间',
+  `create_user_id` bigint(20) default NULL COMMENT '创建用户',
+  `update_user_id` bigint(20) default NULL COMMENT '修改用户',
+  `ext1` varchar(100) default NULL COMMENT '扩展1',
+  `ext2` varchar(100) default NULL COMMENT '扩展2',
+  `ext3` varchar(100) default NULL COMMENT '扩展3',
+  `ext4` varchar(100) default NULL COMMENT '扩展4',
+  `ext5` varchar(100) default NULL COMMENT '扩展5',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='项目用户表';
+
+-- ----------------------------
+-- Records of sc_project_user
+-- ----------------------------
